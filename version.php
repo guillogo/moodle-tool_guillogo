@@ -24,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2020122802;
+$plugin->version = 2020122803;
 $plugin->requires = 2020060900;
 $plugin->component = 'tool_guillogo';
-$plugin->release = 'v1.0';
+$plugin->release = '1.2';

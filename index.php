@@ -15,13 +15,29 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Language strings.
+ * Page example.
  *
- * @package tool_guillogo
+ * @package   tool_guillogo
  * @copyright 2020, Guillermo Gomez <guillermogomez@catalyst-au.net>
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$string['pluginname'] = 'My first Moodle plugin';
-$string['hello'] = 'Hello World';
-$string['courseid'] = 'Course id: {$a}';
+require_once(__DIR__ . '/../../../config.php');
+$cmid = optional_param('id', '',PARAM_INT );
+
+// Set up the page.
+$title = get_string('pluginname', 'tool_guillogo');
+$pagetitle = $title;
+$url = new moodle_url('/admin/tool/guillogo/index.php');
+$PAGE->set_context(context_system::instance());
+$PAGE->set_pagelayout('report');
+$PAGE->set_url($url);
+$PAGE->set_title($title);
+$PAGE->set_heading($title);
+
+echo $OUTPUT->header();
+
+echo html_writer::div(get_string('hello', 'tool_guillogo'));
+echo html_writer::div(get_string('courseid', 'tool_guillogo', $cmid));
+
+echo $OUTPUT->footer();
