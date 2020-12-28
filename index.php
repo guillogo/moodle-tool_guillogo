@@ -23,7 +23,7 @@
  */
 
 require_once(__DIR__ . '/../../../config.php');
-$cmid = optional_param('id', '',PARAM_INT );
+$cmid = optional_param('id', '', PARAM_INT );
 
 // Set up the page.
 $title = get_string('pluginname', 'tool_guillogo');
