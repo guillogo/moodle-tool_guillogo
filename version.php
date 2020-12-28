@@ -15,6 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Version details.
+ *
  * @package   tool_guillogo
  * @copyright 2020, Guillermo Gomez <guillermogomez@catalyst-au.net>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -22,7 +24,7 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2020122801;
+$plugin->version = 2020122802;
 $plugin->requires = 2020060900;
 $plugin->component = 'tool_guillogo';
-$plugin->release = '1.0';
+$plugin->release = 'v1.0';
