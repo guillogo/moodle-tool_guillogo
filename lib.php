@@ -33,14 +33,12 @@ defined('MOODLE_INTERNAL') || die;
  */
 function tool_guillogo_extend_navigation_course($navigation, $course, $context) {
 
-    $settingsnode = navigation_node::create(
+    $navigation->add(
         get_string('pluginname', 'tool_guillogo'),
         new moodle_url('/admin/tool/guillogo/index.php', ['id' => $course->id]),
         navigation_node::TYPE_SETTING,
-        null,
-        null,
-        new pix_icon('i/settings', '')
+        get_string('pluginname', 'tool_guillogo'),
+        'guillogo',
+        new pix_icon('icon', '', 'tool_guillogo')
     );
-
-    $navigation->add_node($settingsnode);
 }
