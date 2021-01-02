@@ -23,21 +23,26 @@
  */
 
 require_once(__DIR__ . '/../../../config.php');
-$cmid = optional_param('id', '', PARAM_INT );
+$courseid = required_param('id', PARAM_INT );
+
+$url = new moodle_url('/admin/tool/guillogo/index.php');
+$title = get_string('pluginname', 'tool_guillogo');
+$context = context_system::instance();
+
+require_login($courseid);
 
 // Set up the page.
-$title = get_string('pluginname', 'tool_guillogo');
-$pagetitle = $title;
-$url = new moodle_url('/admin/tool/guillogo/index.php');
-$PAGE->set_context(context_system::instance());
+$PAGE->set_context($context);
 $PAGE->set_pagelayout('report');
-$PAGE->set_url($url);
+$PAGE->set_url($url, ['id' => $courseid]);
 $PAGE->set_title($title);
 $PAGE->set_heading($title);
+
+$coursenode = $PAGE->settingsnav->add($title, $PAGE->url, navigation_node::TYPE_CONTAINER);
 
 echo $OUTPUT->header();
 
 echo html_writer::div(get_string('hello', 'tool_guillogo'));
-echo html_writer::div(get_string('courseid', 'tool_guillogo', $cmid));
+echo html_writer::div(get_string('courseid', 'tool_guillogo', $courseid));
 
 echo $OUTPUT->footer();

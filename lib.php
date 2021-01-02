@@ -15,16 +15,32 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version details.
+ * This page lists public api for tool_guillogo plugin.
  *
  * @package   tool_guillogo
  * @copyright 2020, Guillermo Gomez <guillermogomez@catalyst-au.net>
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+defined('MOODLE_INTERNAL') || die;
 
-$plugin->version = 2020122803;
-$plugin->requires = 2020060900;
-$plugin->component = 'tool_guillogo';
-$plugin->release = '1.3';
+/**
+ * This function extends the navigation with the tool items
+ *
+ * @param navigation_node $navigation The navigation node to extend
+ * @param stdClass        $course     The course to object for the tool
+ * @param context         $context    The context of the course
+ */
+function tool_guillogo_extend_navigation_course($navigation, $course, $context) {
+
+    $settingsnode = navigation_node::create(
+        get_string('pluginname', 'tool_guillogo'),
+        new moodle_url('/admin/tool/guillogo/index.php', ['id' => $course->id]),
+        navigation_node::TYPE_SETTING,
+        null,
+        null,
+        new pix_icon('i/settings', '')
+    );
+
+    $navigation->add_node($settingsnode);
+}
