@@ -45,4 +45,11 @@ echo $OUTPUT->header();
 echo html_writer::div(get_string('hello', 'tool_guillogo'));
 echo html_writer::div(get_string('courseid', 'tool_guillogo', $courseid));
 
+$table = 'course';
+
+$courseinfo = $DB->get_records($table, ['id' => $courseid]);
+foreach ($courseinfo as $info) {
+    echo html_writer::div($info->fullname);
+}
+
 echo $OUTPUT->footer();
