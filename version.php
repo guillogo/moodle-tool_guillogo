@@ -17,14 +17,15 @@
 /**
  * Version details.
  *
- * @package   tool_guillogo
- * @copyright 2020, Guillermo Gomez <guillermogomez@catalyst-au.net>
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    tool_guillogo
+ * @author     Guillermo Gomez Arias <guigomar@gmail.com>
+ * @copyright  2020 Guillermo Gomez Arias
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2020122804;
+$plugin->version = 2020122806;
 $plugin->requires = 2020060900;
 $plugin->component = 'tool_guillogo';
 $plugin->release = '1.4';

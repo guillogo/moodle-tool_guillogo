@@ -17,9 +17,10 @@
 /**
  * Language strings.
  *
- * @package tool_guillogo
- * @copyright 2020, Guillermo Gomez <guillermogomez@catalyst-au.net>
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    tool_guillogo
+ * @author     Guillermo Gomez Arias <guigomar@gmail.com>
+ * @copyright  2020 Guillermo Gomez Arias
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 $string['pluginname'] = 'My first Moodle plugin';

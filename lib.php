@@ -17,15 +17,16 @@
 /**
  * This page lists public api for tool_guillogo plugin.
  *
- * @package   tool_guillogo
- * @copyright 2020, Guillermo Gomez <guillermogomez@catalyst-au.net>
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    tool_guillogo
+ * @author     Guillermo Gomez Arias <guigomar@gmail.com>
+ * @copyright  2020 Guillermo Gomez Arias
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die;
 
 /**
- * This function extends the navigation with the tool items
+ * This function extends the navigation with the tool items.
  *
  * @param navigation_node $navigation The navigation node to extend
  * @param stdClass        $course     The course to object for the tool
