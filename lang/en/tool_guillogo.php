@@ -26,3 +26,10 @@
 $string['pluginname'] = 'My first Moodle plugin';
 $string['hello'] = 'Hello World';
 $string['courseid'] = 'Course id: {$a}';
+
+$string['courseidheader'] = 'Course id';
+$string['name'] = 'Name';
+$string['completed'] = 'Completed';
+$string['priority'] = 'Priority';
+$string['timecreated'] = 'Time created';
+$string['timemodified'] = 'Time modified';

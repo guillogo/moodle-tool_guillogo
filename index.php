@@ -23,6 +23,8 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
+use tool_guillogo\local\table\guillogo_table;
+
 require_once(__DIR__ . '/../../../config.php');
 $courseid = required_param('id', PARAM_INT );
 
@@ -52,5 +54,10 @@ $courseinfo = $DB->get_records($table, ['id' => $courseid]);
 foreach ($courseinfo as $info) {
     echo html_writer::div($info->fullname);
 }
+
+$table = new guillogo_table('manage-guillogo', $courseid);
+$table->define_baseurl($PAGE->url);
+$table->out(200, true);
+
 
 echo $OUTPUT->footer();
