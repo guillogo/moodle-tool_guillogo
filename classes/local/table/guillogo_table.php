@@ -19,6 +19,7 @@
  *
  * @package   tool_guillogo
  * @author    Guillermo Gomez <guigomar@gmail.com>
+ * @copyright 2020 Guillermo Gomez Arias
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -26,6 +27,13 @@ namespace tool_guillogo\local\table;
 
 use table_sql;
 
+/**
+ * Table to display course info.
+ *
+ * @package   tool_guillogo
+ * @copyright 2020 Guillermo Gomez Arias
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 class guillogo_table extends table_sql {
 
     /**
