@@ -29,17 +29,20 @@ defined('MOODLE_INTERNAL') || die;
  * This function extends the navigation with the tool items.
  *
  * @param navigation_node $navigation The navigation node to extend
- * @param stdClass        $course     The course to object for the tool
- * @param context         $context    The context of the course
+ * @param stdClass $course The course to object for the tool
+ * @param context $context The context of the course
+ * @throws coding_exception|moodle_exception
  */
 function tool_guillogo_extend_navigation_course($navigation, $course, $context) {
 
-    $navigation->add(
-        get_string('pluginname', 'tool_guillogo'),
-        new moodle_url('/admin/tool/guillogo/index.php', ['id' => $course->id]),
-        navigation_node::TYPE_SETTING,
-        get_string('pluginname', 'tool_guillogo'),
-        'guillogo',
-        new pix_icon('icon', '', 'tool_guillogo')
-    );
+    if (has_capability('tool/guillogo:view', $context)) {
+        $navigation->add(
+            get_string('pluginname', 'tool_guillogo'),
+            new moodle_url('/admin/tool/guillogo/index.php', ['id' => $course->id]),
+            navigation_node::TYPE_SETTING,
+            get_string('pluginname', 'tool_guillogo'),
+            'guillogo',
+            new pix_icon('icon', '', 'tool_guillogo')
+        );
+    }
 }

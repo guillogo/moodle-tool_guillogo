@@ -33,3 +33,6 @@ $string['completed'] = 'Completed';
 $string['priority'] = 'Priority';
 $string['timecreated'] = 'Time created';
 $string['timemodified'] = 'Time modified';
+
+$string['guillogo:view'] = 'View';
+$string['guillogo:edit'] = 'Edit';

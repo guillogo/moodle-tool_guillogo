@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version details.
+ * Capabilities tool_guillogo.
  *
  * @package    tool_guillogo
  * @author     Guillermo Gomez Arias <guigomar@gmail.com>
@@ -23,9 +23,21 @@
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+$capabilities = [
+    'tool/guillogo:view' => [
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_COURSE,
+        'archetypes' => [
+            'editingteacher' => CAP_ALLOW,
+            'student' => CAP_ALLOW,
 
-$plugin->version = 2020122807;
-$plugin->requires = 2020060900;
-$plugin->component = 'tool_guillogo';
-$plugin->release = '1.4';
+        ],
+    ],
+    'tool/guillogo:edit' => [
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_COURSE,
+        'archetypes' => [
+            'editingteacher' => CAP_ALLOW,
+        ],
+    ],
+];

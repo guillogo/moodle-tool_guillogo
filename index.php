@@ -26,13 +26,16 @@
 use tool_guillogo\local\table\guillogo_table;
 
 require_once(__DIR__ . '/../../../config.php');
+require_once('../../../lib/tablelib.php');
+
 $courseid = required_param('id', PARAM_INT );
 
 $url = new moodle_url('/admin/tool/guillogo/index.php');
 $title = get_string('pluginname', 'tool_guillogo');
-$context = context_system::instance();
+$context = context_course::instance($courseid);
 
 require_login($courseid);
+require_capability('tool/guillogo:view', $context);
 
 // Set up the page.
 $PAGE->set_context($context);
